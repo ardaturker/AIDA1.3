@@ -33,7 +33,7 @@
     /* Sidebar */
     .sidebar {
       width: 240px;
-      background-color: var(--color-orange); /* Changed from primary-gray to orange */
+      background-color: var(--color-orange);
       color: white;
       padding: 20px 10px;
       display: flex;
@@ -67,7 +67,7 @@
 
     /* Top Bar */
     .topbar {
-      background-color: var(--color-orange); /* Changed from primary-gray to orange */
+      background-color: var(--color-orange);
       color: white;
       padding: 16px 24px;
       display: flex;
@@ -88,14 +88,20 @@
       color: var(--color-primary);
     }
 
-    /* Stories (Horizontal Scroll) */
-    .stories-container {
+    /* ========== UPDATED: Stories Wrapper + Overlay ========== */
+    .stories-wrapper {
+      position: relative;
       background-color: var(--color-secondary);
       border-bottom: 1px solid var(--color-accent);
       padding: 12px 24px;
+      overflow: hidden;
+    }
+    .stories-container {
       display: flex;
-      overflow-x: auto;
       gap: 16px;
+      overflow-x: auto;
+      /* keep the original background & padding so that it’s still “there” but hidden behind */
+      background-color: var(--color-secondary);
     }
     .story-item {
       flex: 0 0 auto;
@@ -137,6 +143,23 @@
       text-overflow: ellipsis;
       width: 100%;
     }
+    /* Black overlay that covers the entire stories section */
+    .stories-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      z-index: 10;
+    }
+    /* ============================================================== */
 
     /* Experts Recommendation Section */
     .experts-suggest {
@@ -329,31 +352,40 @@
       <input type="text" class="search-input" placeholder="Search friends or symbols…" />
     </header>
 
-    <!-- Stories Section: Horizontal Scroll of Professionals -->
-    <div class="stories-container">
-      <!-- Story Item: Professional with green dot indicating “new story” -->
-      <div class="story-item">
-        <div class="story-avatar">DT</div>
-        <div class="story-name">Dr.TradeExpert</div>
+    <!-- ========== UPDATED: Stories Wrapper with Black Overlay ========== -->
+    <div class="stories-wrapper">
+      <div class="stories-container">
+        <!-- Story Item: Professional with green dot indicating “new story” -->
+        <div class="story-item">
+          <div class="story-avatar">DT</div>
+          <div class="story-name">Dr.TradeExpert</div>
+        </div>
+        <div class="story-item">
+          <div class="story-avatar">MK</div>
+          <div class="story-name">MarketKing</div>
+        </div>
+        <div class="story-item">
+          <div class="story-avatar">FA</div>
+          <div class="story-name">FinanceAce</div>
+        </div>
+        <div class="story-item">
+          <div class="story-avatar">PR</div>
+          <div class="story-name">ProfRich</div>
+        </div>
+        <div class="story-item">
+          <div class="story-avatar">VX</div>
+          <div class="story-name">Vixxer</div>
+        </div>
+        <!-- Additional story-items would go here, but they are hidden under the overlay -->
       </div>
-      <div class="story-item">
-        <div class="story-avatar">MK</div>
-        <div class="story-name">MarketKing</div>
+
+      <!-- Black overlay to cover the stories -->
+      <div class="stories-overlay">
+        <!-- You can change this text to whatever makes sense (e.g. “Stories Hidden” or an icon) -->
+        Stories Hidden
       </div>
-      <div class="story-item">
-        <div class="story-avatar">FA</div>
-        <div class="story-name">FinanceAce</div>
-      </div>
-      <div class="story-item">
-        <div class="story-avatar">PR</div>
-        <div class="story-name">ProfRich</div>
-      </div>
-      <div class="story-item">
-        <div class="story-avatar">VX</div>
-        <div class="story-name">Vixxer</div>
-      </div>
-      <!-- Add more story-items as needed -->
     </div>
+    <!-- ============================================================== -->
 
     <!-- Experts Recommendation Section -->
     <section class="experts-suggest">
@@ -457,3 +489,4 @@
   </div>
 </body>
 </html>
+
