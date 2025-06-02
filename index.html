@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ryze Social Feed with Stories &amp; Experts</title>
+  <title>Ryze Social Feed with Experts</title>
   <style>
     /* Color Variables */
     :root {
@@ -88,29 +88,29 @@
       color: var(--color-primary);
     }
 
-    /* ========== UPDATED: Stories Wrapper + Overlay ========== */
-    .stories-wrapper {
+    /* ========== UPDATED: Disclosed Wrapper + Overlay ========== */
+    .disclosed-wrapper {
       position: relative;
       background-color: var(--color-secondary);
       border-bottom: 1px solid var(--color-accent);
       padding: 12px 24px;
       overflow: hidden;
     }
-    .stories-container {
+    .disclosed-container {
       display: flex;
       gap: 16px;
       overflow-x: auto;
       /* keep the original background & padding so that it’s still “there” but hidden behind */
       background-color: var(--color-secondary);
     }
-    .story-item {
+    .disclosed-item {
       flex: 0 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 72px;
     }
-    .story-avatar {
+    .disclosed-avatar {
       width: 56px;
       height: 56px;
       background-color: var(--color-accent);
@@ -124,7 +124,7 @@
       position: relative;
       margin-bottom: 6px;
     }
-    .story-avatar::after {
+    .disclosed-avatar::after {
       content: "";
       position: absolute;
       bottom: -2px;
@@ -135,7 +135,7 @@
       border: 2px solid white;
       border-radius: 50%;
     }
-    .story-name {
+    .disclosed-name {
       font-size: 0.8rem;
       text-align: center;
       white-space: nowrap;
@@ -143,8 +143,8 @@
       text-overflow: ellipsis;
       width: 100%;
     }
-    /* Black overlay that covers the entire stories section */
-    .stories-overlay {
+    /* Black overlay that covers the entire disclosed section */
+    .disclosed-overlay {
       position: absolute;
       top: 0;
       left: 0;
@@ -352,37 +352,37 @@
       <input type="text" class="search-input" placeholder="Search friends or symbols…" />
     </header>
 
-    <!-- ========== UPDATED: Stories Wrapper with Black Overlay ========== -->
-    <div class="stories-wrapper">
-      <div class="stories-container">
-        <!-- Story Item: Professional with green dot indicating “new story” -->
-        <div class="story-item">
-          <div class="story-avatar">DT</div>
-          <div class="story-name">Dr.TradeExpert</div>
+    <!-- ========== UPDATED: Disclosed Wrapper with Black Overlay ========== -->
+    <div class="disclosed-wrapper">
+      <div class="disclosed-container">
+        <!-- Disclosed Item: Professional with green dot indicating “new story” -->
+        <div class="disclosed-item">
+          <div class="disclosed-avatar">DT</div>
+          <div class="disclosed-name">Dr.TradeExpert</div>
         </div>
-        <div class="story-item">
-          <div class="story-avatar">MK</div>
-          <div class="story-name">MarketKing</div>
+        <div class="disclosed-item">
+          <div class="disclosed-avatar">MK</div>
+          <div class="disclosed-name">MarketKing</div>
         </div>
-        <div class="story-item">
-          <div class="story-avatar">FA</div>
-          <div class="story-name">FinanceAce</div>
+        <div class="disclosed-item">
+          <div class="disclosed-avatar">FA</div>
+          <div class="disclosed-name">FinanceAce</div>
         </div>
-        <div class="story-item">
-          <div class="story-avatar">PR</div>
-          <div class="story-name">ProfRich</div>
+        <div class="disclosed-item">
+          <div class="disclosed-avatar">PR</div>
+          <div class="disclosed-name">ProfRich</div>
         </div>
-        <div class="story-item">
-          <div class="story-avatar">VX</div>
-          <div class="story-name">Vixxer</div>
+        <div class="disclosed-item">
+          <div class="disclosed-avatar">VX</div>
+          <div class="disclosed-name">Vixxer</div>
         </div>
-        <!-- Additional story-items would go here, but they are hidden under the overlay -->
+        <!-- Additional disclosed-items would go here, but they are hidden under the overlay -->
       </div>
 
-      <!-- Black overlay to cover the stories -->
-      <div class="stories-overlay">
-        <!-- You can change this text to whatever makes sense (e.g. “Stories Hidden” or an icon) -->
-        Stories Hidden
+      <!-- Black overlay to cover the disclosed section -->
+      <div class="disclosed-overlay">
+        <!-- You can customize this text to your liking -->
+        Disclosed Content Hidden
       </div>
     </div>
     <!-- ============================================================== -->
@@ -489,4 +489,3 @@
   </div>
 </body>
 </html>
-
